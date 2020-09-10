@@ -16,7 +16,7 @@ $gray: #9b9b9b;
   border-bottom: 2px solid $gray;
   outline: 0;
   font-size: 1.3rem;
-  color: #fff;
+  color: $white;
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
@@ -38,7 +38,7 @@ $gray: #9b9b9b;
   display: block;
   transition: 0.2s;
   font-size: 1rem;
-  color: #9b9b9b;
+  color: $gray;
 }
 
 .form__field:focus {
@@ -62,13 +62,13 @@ $gray: #9b9b9b;
   &:required,&:invalid { box-shadow:none; }
 }
 /* demo */
-body {
-  font-family: 'Poppins', sans-serif; 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  font-size: 1.5rem;
-  background-color:#222222;
-}
+// body {
+//   font-family: 'Poppins', sans-serif; 
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   min-height: 100vh;
+//   font-size: 1.5rem;
+//   background-color:#222222;
+// }
