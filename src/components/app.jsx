@@ -11,14 +11,20 @@ class App extends Component {
     }
   }
 
-  getLocation = () => {
-    console.log('jet')
+  handleChange = (target) => {
+    this.setState({ 
+      selectedLocation: target.currentTarget.value
+    })
+  }
+
+  getWeather = () => {
+    console.log(this.state.selectedLocation)
   }
 
   render() {
     return (
       <div className="app">
-        <SearchBar />
+        <SearchBar getWeather={this.getWeather} handleChange={this.handleChange} />
         <WeatherBox />
       </div>
     );
