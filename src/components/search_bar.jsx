@@ -4,9 +4,8 @@ import '../styles/search_bar.scss'
 function SearchBar() {
   return (
     <div className="form-group">
-        <span>Location</span>
-        <input className="form-field" type="text" placeholder="Type a city..."/>
-        <button>Click</button>
+      <input type="text" className="form-input" id='location' placeholder="Enter a location"/>
+      <label for="location" className="form-label">Location</label>
     </div>
   )
 }
