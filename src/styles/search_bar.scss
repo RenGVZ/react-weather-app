@@ -1,11 +1,16 @@
+.form-group {
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 20px;
+}
+
 .form-label {
   font-size: 1.2rem;
-    margin-left: 35%;
-    margin-top: 0.7rem;
-    display: block;
-    transition: all 0.3s;
-    transform: translateY(-6rem);
-    position: relative;
+  display: block;
+  transition: all 0.3s;
+  transform: translateY(-2rem);
+  position: absolute;
+  right: 48%;
 }
 
 .form-input:focus {
@@ -20,7 +25,7 @@
   border: none;
   border-radius: 4px;
   background-color: rgba(249, 246, 246, 0.9);
-  outline-color: rgb(179, 179, 179);
+  outline-color: #b3b3b3;
   width: 70%;
   display: block;
   border-bottom: 0.3rem solid transparent;
@@ -29,5 +34,17 @@
 
 .form-input:placeholder-shown + .form-label {
   opacity: 0;
-  transform: translateY(6rem);
+  transform: translateY(1rem);
+}
+
+.btn {
+  width: 93px;
+  border: 1px solid lightblue;
+  border-radius: 4px;
+  margin-left: 4px;
+  background-color: #aadcec;
+}
+
+.btn:focus {
+  outline-color: lightblue;
 }

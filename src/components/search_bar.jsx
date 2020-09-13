@@ -5,7 +5,8 @@ function SearchBar() {
   return (
     <div className="form-group">
       <input type="text" className="form-input" id='location' placeholder="Enter a location"/>
-      <label for="location" className="form-label">Location</label>
+      <label htmlFor="location" className="form-label">Location</label>
+      <button className="btn">Go</button>
     </div>
   )
 }
