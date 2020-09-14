@@ -35,7 +35,7 @@ class App extends Component {
     return (
       <div className="app">
         <SearchBar getWeather={this.getWeather} handleChange={this.handleChange} />
-        <WeatherBox />
+        <WeatherBox cityInfo={this.state.cityInfo}/>
       </div>
     );
   }
