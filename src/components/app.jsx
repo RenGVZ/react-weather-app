@@ -8,7 +8,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedLocation: null
+      selectedLocation: null,
+      cityInfo: []
     }
   }
 
@@ -18,10 +19,16 @@ class App extends Component {
     })
   }
 
+  handleCityInfo = (data) => {
+    this.setState({
+      cityInfo: data
+    })
+  }
+
   getWeather = () => {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.selectedLocation}&appid=${key}`, {mode: 'cors'})
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(data => this.setState({ cityInfo: data}))
   }
 
   render() {
