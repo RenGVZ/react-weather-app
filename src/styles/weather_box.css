@@ -1,0 +1,21 @@
+.weather-box {
+  border: 3px solid white;
+  border-radius: 4px;
+  width: 30%;
+  height: 70vh;
+  background: rgb(249 246 246 / 90%);
+}
+
+.forcast-box {
+  display: flex;
+  min-height: fit-content;
+}
+
+.forcast-items {
+  display: flex;
+  flex-direction: column;
+  background-color: cadetblue;
+  border-radius: 4px;
+  padding: 12px;
+  margin: 4px;
+}

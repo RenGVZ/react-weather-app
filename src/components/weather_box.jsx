@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/weather_box.css'
 
 const WeatherBox = ({weather, forcast}) => {
   const displayDate = (d) => {
@@ -13,21 +14,21 @@ const WeatherBox = ({weather, forcast}) => {
     return `${day} ${month}, ${date} ${year}`
   }
 
-  // const selectedForcast = forcast.list.slice(0, 2);
-
   return (
     <div className="weather-box">
     {(typeof weather.main != 'undefined' && forcast !== '') ? (
       <div>
         <h3>{displayDate(new Date())}</h3>
         <h1>{weather.sys.country}</h1>
-        {forcast.list.map(forcast => (
-          <div>
-            <p>Time: {forcast.dt_txt}</p>
-            <p>Temp: {Math.round(forcast.main.temp)}&deg;F</p>
-            <p>{forcast.weather[0].description}</p>
-          </div>
-        )).slice(0, 4)}
+        <div className="forcast-box">
+          {forcast.list.map(forcast => (
+            <div className="forcast-items">
+              <p>Time: {forcast.dt_txt}</p>
+              <p>Temp: {Math.round(forcast.main.temp)}&deg;F</p>
+              <p>{forcast.weather[0].description}</p>
+            </div>
+          )).slice(0, 4)}
+        </div>
       </div>
     ) : (null)}
     </div>
