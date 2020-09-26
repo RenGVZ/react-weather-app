@@ -1,12 +1,16 @@
 import React from 'react';
 
-const WeatherBox = (props) => {
+const WeatherBox = ({weather}) => {
   return (
     <div className="weather-box">
-      <div className="content">
-        {/* <h1>{props.cityInfo.weather.main}</h1> */}
-        {/* <h1>{console.log(props.cityInfo[3])}</h1> */}
+    {(typeof weather.main != 'undefined') ? (
+      <div>
+        <h1>{weather.sys.country}</h1>
+          <ul>
+            {/* <li>{country}</li> */}
+          </ul>
       </div>
+    ) : (null)}
     </div>
   )
 }
