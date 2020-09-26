@@ -7,27 +7,36 @@ import key from '../key';
 const App = () => {
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
+  const [forcast, setForcast] = useState('');
 
-  const getWeather = e => {
+  const getCurrentWeather = (e) => {
     e.preventDefault();
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${query}&units=imperial&appid=${key}`, {mode: 'cors'})
-    .then(result => result.json())
-    .then(result => {
-      setWeather(result);
-      setQuery('');
-      console.log(result);
-    })
+    let weatherCall = fetch(`https://api.openweathermap.org/data/2.5/weather?q=${query}&units=imperial&appid=${key}`, {mode: 'cors'});
+    let forcastCall = fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${query}&units=imperial&appid=${key}`);
+  
+    Promise.all([weatherCall, forcastCall])
+      .then(values => Promise.all(values.map(value => value.json())))
+      .then(finalVals => {
+        let weatherResp = finalVals[0];
+        let forcastResp = finalVals[1];
+        setWeather(weatherResp);
+        setForcast(forcastResp);
+        setQuery('');
+        console.log(weatherResp, `${weatherResp}`);
+        console.log(forcastResp, `${forcastResp}`);
+    });
   }
 
     return (
       <div className="app">
         <SearchBar 
-          getWeather={getWeather}
+          getCurrentWeather={getCurrentWeather}
           query={query}
           setQuery={setQuery}
         />
         <WeatherBox
           weather={weather}
+          forcast={forcast}
         />
       </div>
     );

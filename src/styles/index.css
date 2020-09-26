@@ -1,6 +1,7 @@
 html {
   margin: 0 auto;
-  background: linear-gradient(80deg, #f0efef, #6f7aed);
+  background: rgb(9,0,168);
+  background: radial-gradient(circle, rgba(9,0,168,1) 31%, rgba(0,212,255,1) 100%);
 }
 
 .content {
