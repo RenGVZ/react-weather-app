@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/weather_box.css'
+import '../styles/weather_box.scss'
 
 const WeatherBox = ({weather, forcast}) => {
   const displayDate = (d) => {
@@ -9,20 +9,25 @@ const WeatherBox = ({weather, forcast}) => {
     const day = days[d.getDay()];
     const month = months[d.getMonth()];
     const date = d.getDate();
-    const year = d.getFullYear();
 
-    return `${day} ${month}, ${date} ${year}`
+    return `${day}, ${month} ${date}`
   }
 
   return (
     <div className="weather-box">
     {(typeof weather.main != 'undefined' && forcast !== '') ? (
       <div>
+        <div>
+          <h1 className="city">{weather.name},</h1>
+          <h2 className="country">{weather.sys.country}</h2>
+          <h3 className="date">{displayDate(new Date())}</h3>
+        </div>
 
-      <h1 className="city">{weather.name},</h1>
-      <h2 className="country">{weather.sys.country}</h2>
-        <h3>{displayDate(new Date())}</h3>
-        
+        <div className="todays-weather">
+          <h1>Today</h1>
+          <h1>{Math.round(weather.main.temp)}&deg;F</h1>
+        </div>
+
         <div className="forcast-box">
           {forcast.list.map(forcast => (
             <div className="forcast-items">
