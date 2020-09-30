@@ -11,7 +11,7 @@ function SearchBar({setQuery, getCurrentWeather, query}) {
           className="form-input" 
           id='location' 
           placeholder="Enter a location"/>
-        <label htmlFor="location" className="form-label">Location</label>
+        {/* <label htmlFor="location" className="form-label">Location</label> */}
         <button 
           className="btn"
           type="submit"

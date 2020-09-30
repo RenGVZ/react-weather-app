@@ -18,8 +18,11 @@ const WeatherBox = ({weather, forcast}) => {
     <div className="weather-box">
     {(typeof weather.main != 'undefined' && forcast !== '') ? (
       <div>
+
+      <h1 className="city">{weather.name},</h1>
+      <h2 className="country">{weather.sys.country}</h2>
         <h3>{displayDate(new Date())}</h3>
-        <h1>{weather.sys.country}</h1>
+        
         <div className="forcast-box">
           {forcast.list.map(forcast => (
             <div className="forcast-items">
