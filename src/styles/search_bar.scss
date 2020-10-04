@@ -24,6 +24,7 @@
   width: 70%;
   display: block;
   transition: all 0.3s;
+  font-family: 'Lobster', cursive;
 }
 
 .form-input:placeholder-shown + .form-label {
@@ -33,11 +34,14 @@
 
 .btn {
   width: 4rem;
+  color: #333;
+  font-size: 1.2rem;
   border: none;
   border-radius: 16px;
   margin-left: 12px;
   box-shadow: 0 4px 4px 0 rgba(0,0,0, 0.25);
   background-color: rgba(249, 246, 246, 0.9);
+  font-family: 'Lobster', cursive;
 }
 
 .btn:focus {

@@ -2,6 +2,7 @@ html, body {
   margin: 0 auto;
   border-radius: 4px;
   background-color: #F6F6F6;
+  font-family: 'Lobster', cursive;
 }
 
 .content {
